@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <div class="js-container"></div>
+    <script src="https://unpkg.com/supersimpledev@8.6.4/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev@8.6.4/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev@8.6.4/babel.js"></script>
+    <script type="text/babel">
+        //component and props
+        //First Letter of the function should be Capital letter
+       function ChatInput(){
+          return( 
+            <>
+                <input placeholder="Send a Message to Chatbot" size="30"/>
+                <button>send</button>
+            </>
+       )};
+       
+       function ChatMessage({message,user}){
+        // console.log(props);
+        //const message=props.message;
+        //const userMessage=props.user;
+        //const {message,userMessage}=props;
+        // if(userMessage === "robot"){
+        //   return(  <div>
+        //         <img src="robot.png" width="50"/>
+        //         {message}
+        //     </div>
+        // )};
+        
+        
+        //guard operator
+        return (
+            <div>
+                {user === "robot" && (<img src="robot.png" width="50"/>) }
+                {message}
+                {user === "client" && (<img src="user.png" width="50"/>) }
+            </div>
+        )};
+
+            //here we implement chat message component.
+        function App(){
+            const chatmessages=[{
+                message:'hello chatbot',
+                user:'client',
+                id:'1'
+            },
+            {
+                message:'Hello! How can I help you?' ,
+                user:'robot',
+                id:'2'
+
+            },{
+                message:'what is today date?' ,
+                user:'client' ,
+                id:'3'
+            },{
+                message:'Today is November 15' ,
+                user:'robot',
+                id:'4'
+            }]
+              
+
+          //const chatComponent= 
+
+            //2nd day code
+            //<ChatMessage 
+                //      message="hello chatbot" 
+                //      user="client"
+                // />
+                // <ChatMessage message="Hello! How can I help you?" user="robot"/>
+                // <ChatMessage message="what is today date?" user="client"/>
+                // <ChatMessage message="Today is November 15" user="robot"/>
+
+            return (
+             <div>  
+                <ChatInput />
+                {/*Hi*/}
+                {chatmessages.map((chatmessage)=>{
+                 return (
+                    
+                        <ChatMessage 
+                            key={chatmessage.id}
+                            message={chatmessage.message}
+                            user={chatmessage.user}
+                            
+                        />
+                   
+            )
+            })}
+                 
+                
+
+            </div>
+            
+        )};
+
+        // const app=(
+        //     <div>  
+        //         <ChatInput />
+        //         <ChatMessage message="hello chatbot" user="client"/>
+        //         <ChatMessage message="Hello! How can I help you?" user="robot"/>
+        //         <ChatMessage message="what is today date?" user="client"/>
+        //         <ChatMessage message="Today is November 15" user="robot"/>
+
+        //     </div>
+            
+        // );
+
+        const container=document.querySelector(".js-container");
+        ReactDOM.createRoot(container).render(<App />);
+    </script>
+</body>
+</html>
