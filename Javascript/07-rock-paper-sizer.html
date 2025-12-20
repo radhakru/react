@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock paper Scissior</title>
+    <title>Rock Paper Scissior</title>
 </head>
 <body>
     <p>Rock paper Scissior</p>
     <button onClick="
-    let computerChoice='';
-    let       result='';
-      const       randomNumber = Math.random();
-    if(randomNumber >=0 && randomNumber<(1 / 3)){
+      let computerChoice='';
+      let result='';
+      const randomNumber = Math.random();
+    if(randomNumber >= 0 && randomNumber <  (1 / 3)){
         computerChoice='Rock';
     }
-    else if(randomNumber >= (1/3) && randomNumber<(2/3)){
-        computerChoice='paper';
-    }else if(randomNumber >= (2/3) && randomNumber<1){
+    else if(randomNumber >= (1/3) && randomNumber< (2/3)){
+        computerChoice='Paper';
+    }else if(randomNumber >= (2/3) && randomNumber< 1){
         computerChoice='Scissior';
     }
     console.log(computerChoice)
@@ -26,7 +26,7 @@
     if(computerChoice === 'Rock'){
         result='Tie';
     }
-    if(computerChoice === 'paper'){
+    if(computerChoice === 'Paper'){
         result='You Lose';
     }
     else if(computerChoice === 'Scissior'){
@@ -52,13 +52,13 @@
                 computerChoice='Rock';
             }
             else if(randomNumber >= (1/3) && randomNumber<(2/3)){
-                computerChoice='paper';
+                computerChoice='Paper';
             }else if(randomNumber >= (2/3) && randomNumber<1){
                 computerChoice='Scissior';
             }
             console.log(computerChoice);
             //compaire with computerchoice user to our user.
-            if(computerChoice === 'paper'){
+            if(computerChoice === 'Paper'){
                 result='Tie';
             }
             if(computerChoice === 'Scissior'){
@@ -67,35 +67,35 @@
             else if(computerChoice === 'Rock'){
                 result='You Win';
             }
-            alert(`You picked paper, computer picked ${computerChoice}, ${result}`); 
-            ">paper</button>
-    <button onClick="
+            alert(`You picked Paper, computer picked ${computerChoice}, ${result}`); 
+            ">Paper</button>
+            <button onClick="
                     let computerChoice='';
-                let result='';
-                const randomNumber = Math.random();
-                console.log(randomNumber);
-            if(randomNumber >=0 && randomNumber<(1 / 3)){
-                computerChoice='Rock';
-            }
-            else if(randomNumber >= (1/3) && randomNumber<(2/3)){
-                computerChoice='paper';
-            }else if(randomNumber >= (2/3) && randomNumber<1){
-                computerChoice='Scissior';
-            }
-            console.log(computerChoice);
-            //compaire with computerchoice user to our user.
-            if(computerChoice === 'Scissior'){
-                result='Tie';
-            }
-            if(computerChoice === 'Rock'){
-                result='You Lose';
-            }
-            else if(computerChoice === 'paper'){
-                result='You Win';
-            }
-            alert(`You picked Scissior, computer picked ${computerChoice}, ${result}`);
-            "
-    >Scissior</button>
+                    let result='';
+                    const randomNumber = Math.random();
+                    console.log(randomNumber);
+                if(randomNumber >=0 && randomNumber<(1 / 3)){
+                    computerChoice='Rock';
+                }
+                else if(randomNumber >= (1/3) && randomNumber<(2/3)){
+                    computerChoice='Paper';
+                }else if(randomNumber >= (2/3) && randomNumber<1){
+                    computerChoice='Scissior';
+                }
+                console.log(computerChoice);
+                //compaire with computerchoice user to our user.
+                if(computerChoice === 'Scissior'){
+                    result='Tie';
+                }
+                if(computerChoice === 'Rock'){
+                    result='You Lose';
+                }
+                else if(computerChoice === 'Paper'){
+                    result='You Win';
+                }
+                alert(`You picked Scissior, computer picked ${computerChoice}, ${result}`);
+                "
+            >Scissior</button>
 
 <script>
     // let computerChoice = '';
