@@ -12,28 +12,9 @@
             <button onClick="playGame('Paper');">Paper</button>
            
             <button onClick="playGame('Scissor');">Scissior</button>
-
-            <button onCLick="
-                score.Wins=0;
-                score.Loss=0;
-                score.Tie=0;
-            ">Reset Score</button>
     <script>
+       
         
-        // const score={
-        //     Wins:0,
-        //     Loss:0,
-        //     Tie:0
-        // };
-      
-            console.log(localStorage.getItem('score'));
-            const scoreValue=localStorage.getItem('score');
-          // console.log(`parse=+${JSON.parse()`);
-           const jsonvalue=JSON.parse(localStorage.getItem('score'));
-           console.log(jsonvalue);
-           const score=jsonvalue;
-
-                    
          function playGame(playerMove){
             const computerChoice=pickComputerMove();
             let result='';
@@ -50,7 +31,9 @@
                 else if(computerChoice === 'Paper'){
                     result='You Win';
                 }
-                
+                alert(`You picked ${playerMove},
+                computer picked ${computerChoice}, 
+                ${result}`);
             }  
             
             else if(playerMove === 'Rock'){
@@ -63,7 +46,9 @@
                 else if(computerChoice === 'Scissior'){
                     result='You Win';
                 }
-               
+                alert(`You picked ${playerMove},
+                computer picked ${computerChoice}, 
+                ${result}`);
             }
             else if(playerMove === 'Paper'){
                 if(computerChoice === 'Paper'){
@@ -76,30 +61,14 @@
                     result='You Win';
                 }
                 
-            
-            }
-
-            //calculation the result
-            if(result==='You Win'){
-                score.Wins++;
-            }
-            else if(result === 'You Lose'){
-                score.Loss++;
-            }
-            else{
-                score.Tie++;
-            }
-
-            localStorage.setItem('score',JSON.stringify(score));
-            
-           // console.log('move ='+playerMove);
-            console.log(score.Wins);
-            console.log(score.Loss);
-            console.log(score.Tie);
             alert(`You picked ${playerMove},
                 computer picked ${computerChoice}, 
-                ${result},
-                wins:${score.Wins} , Loss:${score.Loss} , Tie:${score.Tie}`); 
+                ${result}`); 
+            }
+
+           // console.log('move ='+playerMove);
+
+
 
           //  alert(`You picked Rock, computer picked ${computerChoice}, ${result}`);
 
