@@ -17,6 +17,7 @@
                 score.Wins=0;
                 score.Loss=0;
                 score.Tie=0;
+                localStorage.removeItem('score');
             ">Reset Score</button>
     <script>
         
@@ -25,13 +26,31 @@
         //     Loss:0,
         //     Tie:0
         // };
-      
+     
+        
             console.log(localStorage.getItem('score'));
+            //store local data into constant value.
             const scoreValue=localStorage.getItem('score');
           // console.log(`parse=+${JSON.parse()`);
-           const jsonvalue=JSON.parse(localStorage.getItem('score'));
+          //change the getlocaldata to json object
+           const jsonvalue=JSON.parse(scoreValue);
            console.log(jsonvalue);
-           const score=jsonvalue;
+           //shortcut way
+           //user the default operator for checking if the score is null then assign the default value.
+           let score=jsonvalue || {
+                Wins:0,
+                Loss:0,
+                Tie:0
+            };
+          
+            //simple way to check null value
+          //  if(!score){
+          //   score={
+          //       Wins:0,
+          //       Loss:0,
+          //       Tie:0
+          //   };
+          //  }
 
                     
          function playGame(playerMove){

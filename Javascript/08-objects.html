@@ -81,6 +81,61 @@ localStorage.setItem('message','name');
 console.log(localStorage.getItem('message'));
 
 
+console.log('hello'.length);
+
+//object reference 
+//it store in some where in the memory heap of computer.
+const object1={
+    value:10
+};
+//copy of object1 to object2
+const object2=object1;
+
+//cahnge the properties of object1
+
+object1.value='hi';
+console.log('object2 value = ' + object2.value);//hi
+console.log('object1 value = ' + object1.value);//hi
+
+
+//we can not compare the two objects even they have same properties and values
+const object3={
+    value:10
+};
+
+//compare reference of two objects
+console.log("compare between two objects =" + (object1 === object3));//false --reference are different
+console.log("compare between two objects =" + (object2 === object1));//true --reference are same
+
+
+const object4={
+    value:10,
+    price:799
+};
+
+//const value=object4.value;
+
+//destructuring assignment
+//syntax: const {propertyname}=objectname;
+const {value,price}=object4;
+console.log("value = " + value + " price = " + price);//10 799
+
+//shorthand property names(if variable name and property name are same)
+const object5={
+    value1:value,
+    // method:function function1(){
+    //     console.log('method inside object5 called');
+    // }
+    //shorthand method names
+    method(){
+        console.log('method inside object5 called - shorthand');
+    }   
+
+};
+const {value1}=object5;
+console.log("value1 = " +  value1);//10
+object5.method();
+
 
     </script>
     

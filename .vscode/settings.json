@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.port": 5500
+    "liveServer.settings.port": 5502,
+    "livePreview.defaultPreviewPath": "/Javascript/08-objects.html"
 }
