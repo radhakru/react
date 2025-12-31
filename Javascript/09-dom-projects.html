@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Projects</title>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button onClick="function1();" class="js-subscribe">Subscribe</button>
+
+    <script>
+      //create one function to use it
+      function function1() {
+        const btnValue = document.querySelector(".js-subscribe").innerHTML;
+        if (btnValue === "Subscribe") {
+          document.querySelector(".js-subscribe").innerHTML = "Subscribed";
+          console.log("value of btn=" + btnValue);
+        } else {
+          document.querySelector(".js-subscribe").innerHTML = "Subscribe";
+          console.log("value of btn=" + btnValue);
+        }
+      }
+    </script>
+  </body>
+</html>
