@@ -8,9 +8,19 @@
   <body>
     <p>YouTube Subscribe Button</p>
     <button onClick="function1();" class="js-subscribe">Subscribe</button>
-
+    <p>Amazon Shopping Calculator</p>
+    <input placeholder="Cost of order" onkeydown="handleonKeydown()" />
+    <button onclick="calculate();">calculate</button>
+    <p class="js-cost"></p>
     <script>
       //create one function to use it
+
+      function handleonKeydown() {
+        if (event.key === "Enter") {
+          calculate();
+        }
+      }
+
       function function1() {
         const btnValue = document.querySelector(".js-subscribe").innerHTML;
         if (btnValue === "Subscribe") {
@@ -20,6 +30,17 @@
           document.querySelector(".js-subscribe").innerHTML = "Subscribe";
           console.log("value of btn=" + btnValue);
         }
+      }
+
+      function calculate() {
+        const input = document.querySelector("input");
+        let cost = Number(input.value); //type coercion
+        console.log(typeof cost);
+
+        if (cost < 40) {
+          cost += 10;
+        }
+        document.querySelector(".js-cost").innerHTML = `$${cost}`;
       }
     </script>
   </body>

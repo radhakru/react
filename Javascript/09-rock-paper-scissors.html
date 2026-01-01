@@ -11,12 +11,20 @@
             <button onClick="playGame('Paper');">Paper</button>
            
             <button onClick="playGame('Scissor');">Scissior</button>
+            
+            <p class="js-result"></p>
+            <p class="js-moves"></p>
+            <p class="js-score"></p>
+           
+
+
 
             <button onCLick="
                 score.Wins=0;
                 score.Loss=0;
                 score.Tie=0;
                 localStorage.removeItem('score');
+                updateScore();
             ">Reset Score</button>
     <script>
         
@@ -31,7 +39,7 @@
             //store local data into constant value.
             const scoreValue=localStorage.getItem('score');
           // console.log(`parse=+${JSON.parse()`);
-          //change the getlocaldata to json object
+          //change the getlocaldata to js object
            const jsonvalue=JSON.parse(scoreValue);
            console.log(jsonvalue);
            //shortcut way
@@ -51,6 +59,11 @@
           //   };
           //  }
 
+
+         // document.querySelector('.js-score').innerHTML=`wins:${score.Wins} , Loss:${score.Loss} , Tie:${score.Tie}`;
+         ///call the updateScore function here
+           console.log(updateScore());
+            
                     
          function playGame(playerMove){
             const computerChoice=pickComputerMove();
@@ -109,7 +122,13 @@
             }
 
             localStorage.setItem('score',JSON.stringify(score));
-            
+            //call the update the score inside the play game function for view the updated score
+            updateScore();
+            //display the result using alert
+            document.querySelector('.js-result').innerHTML=result;
+            document.querySelector('.js-moves').innerHTML=`You picked ${playerMove} - computer picked ${computerChoice}`;
+    
+              
            // console.log('move ='+playerMove);
             console.log(score.Wins);
             console.log(score.Loss);
@@ -125,10 +144,18 @@
              // console.log(playerMove); 
             
             //console.log(result);
-            
-            }
+        }
 
-
+            //call the update the function for update the score
+        function updateScore(){
+            document.querySelector('.js-score').innerHTML=`wins:${score.Wins} , Loss:${score.Loss} , Tie:${score.Tie}`;
+            console.log(`uodate score= + ${score.Wins}`);
+            console.log(`uodate score= + ${score.Loss}`);
+            console.log(`uodate score= + ${score.Tie}`);
+        }
+        
+        
+       
 
 
         function pickComputerMove(){
