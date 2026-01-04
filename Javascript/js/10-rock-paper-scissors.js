@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock , Paper , Scissor</title>
-  </head>
-   <p>Rock paper Scissior</p>
-            <button onClick="playGame('Rock');"> Rock</button>
-
-            <button onClick="playGame('Paper');">Paper</button>
-           
-            <button onClick="playGame('Scissor');">Scissior</button>
-            
-            <p class="js-result"></p>
-            <p class="js-moves"></p>
-            <p class="js-score"></p>
-           
-
-
-
-            <button onCLick="
-                score.Wins=0;
-                score.Loss=0;
-                score.Tie=0;
-                localStorage.removeItem('score');
-                updateScore();
-            ">Reset Score</button>
-    <script>
-        
-        // const score={
+ // const score={
         //     Wins:0,
         //     Loss:0,
         //     Tie:0
@@ -68,42 +38,42 @@
          function playGame(playerMove){
             const computerChoice=pickComputerMove();
             let result='';
+            console.log(`"User choice = "+ ${playerMove}`);
             
-            
-            if(playerMove === 'Scissor'){
-                if(computerChoice === 'Scissior'){
+            if(playerMove === 'scissors'){
+                if(computerChoice === 'scissors'){
                     result='Tie';
                     //console.log(result);
                 }
-                else if(computerChoice === 'Rock'){
+                else if(computerChoice === 'rock'){
                     result='You Lose';
                 }
-                else if(computerChoice === 'Paper'){
+                else if(computerChoice === 'paper'){
                     result='You Win';
                 }
                 
             }  
             
-            else if(playerMove === 'Rock'){
-                if(computerChoice === 'Rock'){
+            else if(playerMove === 'rock'){
+                if(computerChoice === 'rock'){
                     result='Tie';
                 }
-                if(computerChoice === 'Paper'){
+                if(computerChoice === 'paper'){
                     result='You Lose';
                 }
-                else if(computerChoice === 'Scissior'){
+                else if(computerChoice === 'scissors'){
                     result='You Win';
                 }
                
             }
-            else if(playerMove === 'Paper'){
-                if(computerChoice === 'Paper'){
+            else if(playerMove === 'paper'){
+                if(computerChoice === 'paper'){
                     result='Tie';
                 }
-                else if(computerChoice === 'Scissior'){
+                else if(computerChoice === 'scissors'){
                     result='You Lose';
                 }
-                else if(computerChoice === 'Rock'){
+                else if(computerChoice === 'rock'){
                     result='You Win';
                 }
                 
@@ -126,7 +96,12 @@
             updateScore();
             //display the result using alert
             document.querySelector('.js-result').innerHTML=result;
-            document.querySelector('.js-moves').innerHTML=`You picked ${playerMove} - computer picked ${computerChoice}`;
+            document.querySelector('.js-moves').innerHTML=` You
+                <img src="projectimages/${playerMove}-emoji.png" 
+                class="move-icon">
+                <img src="projectimages/${computerChoice}-emoji.png" 
+                class="move-icon">
+                Computer`;
     
               
            // console.log('move ='+playerMove);
@@ -163,14 +138,14 @@
                  let computerChoice='';
                     console.log(randomNumber);
                 if(randomNumber >=0 && randomNumber<(1 / 3)){
-                    computerChoice='Rock';
+                    computerChoice='rock';
                 }
                 else if(randomNumber >= (1/3) && randomNumber<(2/3)){
-                    computerChoice='Paper';
+                    computerChoice='paper';
                 }else if(randomNumber >= (2/3) && randomNumber<1){
-                    computerChoice='Scissior';
+                    computerChoice='scissors';
                 }
-                console.log(computerChoice);
+                console.log(`"Computer choice = "+${computerChoice}`);
             return computerChoice;    
         }
 
@@ -180,7 +155,3 @@
        
 
 
-    </script>
-
-</body>
-</html>

@@ -9,13 +9,22 @@
     <p>YouTube Subscribe Button</p>
     <button onClick="function1();" class="js-subscribe">Subscribe</button>
     <p>Amazon Shopping Calculator</p>
-    <input placeholder="Cost of order" onkeydown="handleonKeydown()" />
+    <input placeholder="Cost of order" onkeydown="handleonKeydown(event)" />
     <button onclick="calculate();">calculate</button>
     <p class="js-cost"></p>
     <script>
       //create one function to use it
+      //convert Number to string
+      String(23);
+      console.log(typeof String(23));
+      //console.log("10" - 5);//mistake
 
-      function handleonKeydown() {
+      //window is build in object that represent the browser , we do not need to call it directly
+      window.document;
+      window.console.log("window");
+      // window.alert("hello world");
+
+      function handleonKeydown(event) {
         if (event.key === "Enter") {
           calculate();
         }
