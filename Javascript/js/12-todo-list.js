@@ -15,7 +15,7 @@ let todoOne=[];
 function renderTodoList(){
     let htmlCodeChange='';
 
-    todoOne.forEach(function(todovalObj, index){
+    todoOne.forEach((todovalObj, index)=>{
     // const todovalObj=todoOne[i];
         const {Text,date}=todovalObj;
         //const date=todovalObj.date;

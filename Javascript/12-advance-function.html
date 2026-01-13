@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance-Function</title>
+</head>
+<body>
+  
+
+    <button onclick="" class="js-button">click</button>
+
+    <script>
+
+        [
+            'Make dinner',
+            'Wash dishes',
+            'Watch youtube'
+        ].forEach((value,index)=>{
+            if(value==='Wash dishes'){
+                return;
+            }
+            console.log("indexs= "+index+" values= "+value);
+        });
+
+
+        //1.Arrow Function
+        const arrowFunction= (param,param2)=>{
+            console.log('arrow hello');
+            return 5;
+        }
+        arrowFunction();
+        const normalFunction= function(param,param2){
+            console.log('Normal Function');
+            return 5;
+        }
+
+        //oneparam
+        const oneParam=param=>{
+            console.log(param);
+        }
+        oneParam(90);
+
+        //oneLine
+        const oneLine= ()=>2+4;
+        console.log(oneLine());
+        
+
+       const btn= document.querySelector('.js-button');
+       const clickEvt=()=>{
+        console.log('1st trigger click function using addEventListner.');
+       };
+       btn.addEventListener('click',clickEvt);
+       
+       btn.removeEventListener('click',click());
+       btn.addEventListener('click',clickEvt);
+
+
+
+
+    </script>
+</body>
+</html>
