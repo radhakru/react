@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock , Paper , Scissor</title>
+  </head>
+   <p>Rock paper Scissior</p>
+            <button onClick="playGame('Rock');"> Rock</button>
+
+            <button onClick="playGame('Paper');">Paper</button>
+           
+            <button onClick="playGame('Scissor');">Scissior</button>
+            
+            <p class="js-result"></p>
+            <p class="js-moves"></p>
+            <p class="js-score"></p>
+           
+
+
+
+            <button onCLick="
+                score.Wins=0;
+                score.Loss=0;
+                score.Tie=0;
+                localStorage.removeItem('score');
+                updateScore();
+            ">Reset Score</button>
+    <script>
+        
+        // const score={
+        //     Wins:0,
+        //     Loss:0,
+        //     Tie:0
+        // };
+     
+        
+            console.log(localStorage.getItem('score'));
+            //store local data into constant value.
+            const scoreValue=localStorage.getItem('score');
+          // console.log(`parse=+${JSON.parse()`);
+          //change the getlocaldata to js object
+           const jsonvalue=JSON.parse(scoreValue);
+           console.log(jsonvalue);
+           //shortcut way
+           //user the default operator for checking if the score is null then assign the default value.
+           let score=jsonvalue || {
+                Wins:0,
+                Loss:0,
+                Tie:0
+            };
+          
+            //simple way to check null value
+          //  if(!score){
+          //   score={
+          //       Wins:0,
+          //       Loss:0,
+          //       Tie:0
+          //   };
+          //  }
+
+
+         // document.querySelector('.js-score').innerHTML=`wins:${score.Wins} , Loss:${score.Loss} , Tie:${score.Tie}`;
+         ///call the updateScore function here
+           //console.log(updateScore());
+            
+                    
+         function playGame(playerMove){
+            const computerChoice=pickComputerMove();
+            let result='';
+            
+            
+            if(playerMove === 'Scissor'){
+                if(computerChoice === 'Scissior'){
+                    result='Tie';
+                    //console.log(result);
+                }
+                else if(computerChoice === 'Rock'){
+                    result='You Lose';
+                }
+                else if(computerChoice === 'Paper'){
+                    result='You Win';
+                }
+                
+            }  
+            
+            else if(playerMove === 'Rock'){
+                if(computerChoice === 'Rock'){
+                    result='Tie';
+                }
+                if(computerChoice === 'Paper'){
+                    result='You Lose';
+                }
+                else if(computerChoice === 'Scissior'){
+                    result='You Win';
+                }
+               
+            }
+            else if(playerMove === 'Paper'){
+                if(computerChoice === 'Paper'){
+                    result='Tie';
+                }
+                else if(computerChoice === 'Scissior'){
+                    result='You Lose';
+                }
+                else if(computerChoice === 'Rock'){
+                    result='You Win';
+                }
+                
+            
+            }
+
+            //calculation the result
+            if(result==='You Win'){
+                score.Wins++;
+            }
+            else if(result === 'You Lose'){
+                score.Loss++;
+            }
+            else{
+                score.Tie++;
+            }
+
+            localStorage.setItem('score',JSON.stringify(score));
+            //call the update the score inside the play game function for view the updated score
+            updateScore();
+            //display the result using alert
+            document.querySelector('.js-result').innerHTML=result;
+            document.querySelector('.js-moves').innerHTML=`You picked ${playerMove} - computer picked ${computerChoice}`;
+    
+              
+           // console.log('move ='+playerMove);
+            console.log(score.Wins);
+            console.log(score.Loss);
+            console.log(score.Tie);
+            alert(`You picked ${playerMove},
+                computer picked ${computerChoice}, 
+                ${result},
+                wins:${score.Wins} , Loss:${score.Loss} , Tie:${score.Tie}`); 
+
+          //  alert(`You picked Rock, computer picked ${computerChoice}, ${result}`);
+
+              
+             // console.log(playerMove); 
+            
+            //console.log(result);
+        }
+
+            //call the update the function for update the score
+        function updateScore(){
+            document.querySelector('.js-score').innerHTML=`wins:${score.Wins} , Loss:${score.Loss} , Tie:${score.Tie}`;
+            console.log(`update score= + ${score.Wins}`);
+            console.log(`update score= + ${score.Loss}`);
+            console.log(`update score= + ${score.Tie}`);
+        }
+        
+        
+       
+
+
+        function pickComputerMove(){
+             const randomNumber = Math.random();
+                 let computerChoice='';
+                    console.log(randomNumber);
+                if(randomNumber >=0 && randomNumber<(1 / 3)){
+                    computerChoice='Rock';
+                }
+                else if(randomNumber >= (1/3) && randomNumber<(2/3)){
+                    computerChoice='Paper';
+                }else if(randomNumber >= (2/3) && randomNumber<1){
+                    computerChoice='Scissior';
+                }
+                console.log(computerChoice);
+            return computerChoice;    
+        }
+
+
+        //parameters
+
+       
+
+
+    </script>
+
+</body>
+</html>

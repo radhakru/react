@@ -17,23 +17,11 @@
                 score.Wins=0;
                 score.Loss=0;
                 score.Tie=0;
+                localStorage.removeItem('score');
             ">Reset Score</button>
     <script>
+       
         
-        // const score={
-        //     Wins:0,
-        //     Loss:0,
-        //     Tie:0
-        // };
-      
-            console.log(localStorage.getItem('score'));
-            const scoreValue=localStorage.getItem('score');
-          // console.log(`parse=+${JSON.parse()`);
-           const jsonvalue=JSON.parse(localStorage.getItem('score'));
-           console.log(jsonvalue);
-           const score=jsonvalue;
-
-                    
          function playGame(playerMove){
             const computerChoice=pickComputerMove();
             let result='';

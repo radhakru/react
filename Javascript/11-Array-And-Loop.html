@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array And Loops</title>
+  </head>
+  <body>
+    <script>
+      const myArray = [10, 20, 30];
+      console.log(myArray);
+
+      //access the element fron the array using indexing.
+      console.log(`array of 1st position =   ${myArray[0]}`);
+
+      //CHANGE ELEMENT FROM THE ARRAY USING INDEX
+      myArray[0] = 99;
+      console.log(`print the array =  ${myArray}`);
+      console.log(myArray); //[10, 20, 30]
+
+      //Add any multiple of data into an array
+      [1, "Ramayan", true, { name: "Ravan" }, [20, 31]];
+
+      console.log(typeof [20, 23]); //object
+
+      //check array is an object or not
+      console.log("This is for checking array - " + Array.isArray([20, 23]));
+
+      //We HAVE PROPERTY AND METHOD FOR ARRAY AND LOOP
+      console.log(`myArray length - ${myArray.length}`);
+      //1.push()
+      myArray.push(50);
+      console.log(myArray);
+
+      //2.splice(i,j)-> i means starting index and j means how many ekements are delete from i th index.
+      myArray.splice(0, 1);
+      console.log(`myArray length after use slice method - ${myArray.length}`);
+    </script>
+  </body>
+</html>

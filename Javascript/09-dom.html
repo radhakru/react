@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body>
+    <button class="js-button">hello</button>
+    <button class="js-second-button">Second Button</button>
+
+    <script>
+      //changes the entire body content
+      //dcument is build in object
+      //body is also build in object
+      //here innerHTML is used as property of body object for changing the content
+      // document.body.innerHTML = "hello";
+
+      //change the title of the webpage
+      //document.title = "Dom Title changed by js";
+
+      //properties of document object
+      //1.docucment.title
+      // console.log(document.title);
+      // document.body.innerHTML = "changed";
+      //2.document.body
+      //   const valie = document.body;
+
+      //   console.log("before = " + valie.getHTML());
+      //   //3.document.body.innerHTML
+      //   //1)only text changes
+      //   document.body.innerHTML = "Changed";
+      //   //it is also used to add html tags
+      //   document.body.innerHTML = "<button>Hello</button>";
+
+      //   console.log(document.body);
+
+      //4.QuerySelector
+      console.log(
+        "before modify = " + document.querySelector(".js-button").innerHTML
+      );
+      //change the html content through querySelector
+      document.querySelector(".js-button").innerHTML = "This is modify button";
+      console.log(
+        "After modify = " + document.querySelector(".js-button").innerHTML
+      );
+
+      //acccess second button
+      console.log(
+        "second button = " +
+          document.querySelector(".js-second-button").innerHTML
+      );
+
+      //change the context of the second button
+      const secondbtn = document.querySelector(".js-second-button").innerHTML;
+      console.log("second button = " + secondbtn);
+    </script>
+  </body>
+</html>

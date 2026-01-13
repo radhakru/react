@@ -81,6 +81,149 @@ localStorage.setItem('message','name');
 console.log(localStorage.getItem('message'));
 
 
+console.log('hello'.length);
+
+//object reference 
+//it store in some where in the memory heap of computer.
+const object1={
+    value:10
+};
+//copy of object1 to object2
+const object2=object1;
+
+//cahnge the properties of object1
+
+object1.value='hi';
+console.log('object2 value = ' + object2.value);//hi
+console.log('object1 value = ' + object1.value);//hi
+
+
+//we can not compare the two objects even they have same properties and values
+const object3={
+    value:10
+};
+
+//compare reference of two objects
+console.log("compare between two objects =" + (object1 === object3));//false --reference are different
+console.log("compare between two objects =" + (object2 === object1));//true --reference are same
+
+
+const object4={
+    value:10,
+    price:799
+};
+
+//const value=object4.value;
+
+//destructuring assignment
+//syntax: const {propertyname}=objectname;
+const {value,price}=object4;
+console.log("value = " + value + " price = " + price);//10 799
+
+//shorthand property names(if variable name and property name are same)
+const object5={
+    value1:value,
+    // method:function function1(){
+    //     console.log('method inside object5 called');
+    // }
+    //shorthand method names
+    method(){
+        console.log('method inside object5 called - shorthand');
+    }   
+
+};
+const {value1}=object5;
+console.log("value1 = " +  value1);//10
+object5.method();
+
+
+    </script>
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+       /*
+       //name and price are propertise of the products object
+        const product={
+            name:'socks',
+            price:1000
+        };
+        //accessing the product object
+        console.log(product);
+        console.log("product name = "+product.name+"\n"+"product price = "+product.price);
+         
+
+        //change the object properties are
+        //syntax object name.properties name= new value;
+        product.name='cotton socks';
+        console.log('product name = '+product.name);
+
+
+        //add a new property into object
+        product.newProperty=true;
+        console.log(product);
+
+        //delete the property from the object
+        delete product.newProperty;
+        console.log(product);
+    */
+
+  /*  const product ={
+        name:'shirt',
+        'delivery-time':'1 day',
+        rating:{
+            stars:4.5,
+            count:67
+        }
+        ,
+        fun:function f1(){
+            console.log('function inside object');
+        }
+    };
+    console.log(product);
+    console.log(product.name);  
+    console.log(product['delivery-time']);
+
+//access the inner object from the object
+console.log(product.rating.count);
+console.log(product['rating']['count']);
+
+//access the function inside the object
+product.fun();
+
+console.log(typeof console);
+console.log(typeof console.log);
+
+
+//Notes
+
+//1.convert javascript object to json
+//syntax for convert js object to json 
+//JSON.stringfy(Javascript object name);
+console.log( JSON.stringify(product));
+console.log(typeof JSON.stringify(product));
+
+const res= JSON.stringify(product);
+//convert JSON -> Javascript Object
+console.log(JSON.parse(res));
+*/
+
+//2.LocalStorage
+//how to us localStorage in our project
+//syntax : localStorage('variablename','value');
+localStorage.setItem('message','name');
+
+console.log(localStorage.getItem('message'));
+
+
 
     </script>
     
