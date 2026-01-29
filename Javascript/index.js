@@ -59,21 +59,67 @@ if(btnn.getAttribute("id")==="btn"){
 
 */
   // Wait until DOM is loaded
-    document.addEventListener("DOMContentLoaded", () => {
-      const btnn = document.getElementById("btn");
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   const btnn = document.getElementById("btn");
       
-      // Optional: check if button exists
-      if (btnn) {
-        // Add click listener
-        let count = 0; // count clicks
-        btnn.addEventListener("click", (e) => {
-         // e.preventDefault(); // prevent form submit if button is inside form
-          count++;
-          const res = add(10, 20);
-          console.log(`Click ${count}: result = ${res}`);
-        });
-      }
-    });
+    //   // Optional: check if button exists
+    //   if (btnn) {
+    //     // Add click listener
+    //     let count = 0; // count clicks
+    //     btnn.addEventListener("click", (e) => {
+    //      // e.preventDefault(); // prevent form submit if button is inside form
+    //       count++;
+    //       const res = add(10, 20);
+    //       console.log(`Click ${count}: result = ${res}`);
+    //     });
+    //   }
+    // });
+
+const fun=(a,b) =>console.log(a*b);
+ //a*b;
+
+const button=document.getElementById("btn");
+ let count=0;
+const a=10, b=20;
+  const mes="button clicked";
+button.addEventListener("click" ,(event)=>{
+ this.mes=mes;
+    fun(a,b);//200
+    const showAlert=            
+        () =>{
+        window.alert(mes);
+        console.log(event.view);
+        console.log(window.confirm("Are you sure?"));
+        }
+        showAlert();
+    console.log(mes);//button clicked
+    console.log(`button clicked ${count}`);
+    count++;
+    setAttribute();
+
+
+});
+
+
+const setAttribute=()=>{
+    const hasClass = button.getAttribute("class");
+    console.log(hasClass);
+
+    if (hasClass===null) {
+        button.setAttribute("class","btn-class");
+    } else {
+        button.removeAttribute("class");
+    }
+
+    console.log(button.className);
+}
+
+// setAttribute();
+
+console.log(`view button field attribute = ${button.getAttribute('class')}`);
+
+
+
 
 //if(typeof bignum === )
 
